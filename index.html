@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>ZerozxNews · All Sources Loaded</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts Premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Premium -->
+    <header class="header-premium">
+        <div class="header-container">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <i class="fas fa-newspaper"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>ZEROZX NEWS</h1>
+                    <p>ALL SOURCES · CNBC + CNN + KOMPAS</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="live-badge">
+                    <div class="live-dot"></div>
+                    <span>LIVE</span>
+                </div>
+                <button class="refresh-btn" onclick="fullRefresh()">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Refresh</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filter Section -->
+    <div class="filter-section" id="filterSection">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="cnbc">CNBC Indonesia</button>
+        <button class="filter-btn" data-filter="cnn">CNN Indonesia</button>
+        <button class="filter-btn" data-filter="kompas">Kompas.com</button>
+    </div>
+
+    <!-- Main Container -->
+    <main class="main-container" id="mainContainer">
+        <div class="loading-wrapper" id="loadingState">
+            <div class="loading-spinner"></div>
+            <p style="color: var(--text-secondary)">Memuat semua berita dari CNBC, CNN, dan Kompas...</p>
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">Mengambil data dari 3 sumber sekaligus</p>
+        </div>
+        <div id="newsContent" style="display: none;"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-premium">
+        <p>© 2026 ZEROZX NEXUS · <span>CNBC Indonesia + CNN Indonesia + Kompas.com</span> · All News Loaded</p>
+    </footer>
+
+    <!-- Modal Premium -->
+    <div class="modal-premium" id="newsModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3><i class="fas fa-newspaper" style="margin-right: 0.5rem;"></i> ZEROZX DETAIL</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
